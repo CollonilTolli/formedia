@@ -1,0 +1,116 @@
+@import "@/globalsCss/mixins.scss";
+
+.projectItem {
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1 / 1.78;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    &_image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+            opacity: 0.6;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, .5);
+            transition: opacity .9s ease;
+        }
+    }
+
+    &_container {
+        margin-top: auto;
+        padding: 0 15px;
+
+        .title {
+            color: #FFF;
+            font-family: Nunito Sans;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+
+            @include breakpoint(desktop) {
+                color: #FFF;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 100%;
+                /* 20px */
+            }
+        }
+
+        .description {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .8s ease;
+            max-height: 100%;
+            color: #FFF;
+            font-size: 10px;
+
+            @include breakpoint(desktop) {
+                font-size: 15px;
+            }
+
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+
+            padding: 15px 0;
+
+            &_container {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -moz-box;
+                -moz-box-orient: vertical;
+                display: -webkit-box;
+                -webkit-line-clamp: 15;
+                -webkit-box-orient: vertical;
+                line-clamp: 15;
+                box-orient: vertical;
+            }
+        }
+
+    }
+
+    &:hover {
+        .projectItem_image {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        .description {
+            grid-template-rows: 1fr;
+        }
+    }
+}

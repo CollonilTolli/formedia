@@ -1,0 +1,19 @@
+@import "@/globalsCss/mixins.scss";
+
+.ProjectSlider {
+    overflow: clip;
+    width: 100%;
+
+    .navigation {
+
+
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        @include breakpoint(desktopLarge) {
+            margin-top: 32px;
+        }
+    }
+}

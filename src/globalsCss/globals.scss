@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Nunito Sans;
+    src: url("/fonts/NunitoSans.ttf");
+}
+
+* {
+    font-family: Nunito Sans;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}

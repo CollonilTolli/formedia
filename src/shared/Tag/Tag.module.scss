@@ -1,0 +1,25 @@
+.tag {
+    border-bottom: 1px solid #fff;
+    width: fit-content;
+    padding: 3px 0;
+    transition: opacity .4s ease;
+
+    a {
+        color: #fff;
+        font-family: Nunito Sans;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-decoration: none;
+
+        img {
+            margin-right: .3em;
+        }
+    }
+
+    &:hover {
+        opacity: .6;
+    }
+}

@@ -1,0 +1,35 @@
+@import "@/globalsCss/mixins.scss";
+
+.Button {
+    padding: 16px 44px;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    transition: .4s ease;
+    outline: none;
+    width: 100%;
+    user-select: none;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+        width: fit-content;
+        padding: 16px 114px;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 16px 44px;
+    }
+
+    &:hover,
+    &:focus-visible {
+        opacity: .85;
+    }
+
+    &:active {
+        border: 1px solid #333333;
+    }
+}

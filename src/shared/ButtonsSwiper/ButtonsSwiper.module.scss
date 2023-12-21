@@ -1,0 +1,18 @@
+.Buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: fit-content;
+
+    .button {
+        padding: 16px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px solid #FFF;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
