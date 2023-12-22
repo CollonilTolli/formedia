@@ -1,6 +1,6 @@
 import { SpecProject } from "@/types/types"
 import ProjectComponent from "@/widgets/ProjectComponent/ProjectComponent"
-// import { specProject } from "@/MockData/MockData"
+import { specProject } from "@/MockData/MockData"
 import axios from "axios"
 
 async function getData() {
@@ -9,11 +9,10 @@ async function getData() {
         throw new Error("Failed to fetch data")
     }
 
-    return res.json()
+    return res ? res.json() : specProject
 }
 export default async function Page() {
     const data = await getData()
-    console.log(data)
     return (
         <>
             <ProjectComponent data={data} />
