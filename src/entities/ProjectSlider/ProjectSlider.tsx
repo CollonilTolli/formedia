@@ -34,11 +34,12 @@ export default function ProjectSlider({ data }: { data: SpecProject }) {
                 loop={true}
                 modules={[Pagination]}
             >
-                {data.slides.map((el) => (
-                    <SwiperSlide key={el.name}>
-                        <ProjectItem content={el} />
-                    </SwiperSlide>
-                ))}
+                {data.slides.length &&
+                    data.slides.map((el) => (
+                        <SwiperSlide key={el.name}>
+                            <ProjectItem content={el} />
+                        </SwiperSlide>
+                    ))}
                 <div className={css.navigation}>
                     <SwiperButtons />
                 </div>

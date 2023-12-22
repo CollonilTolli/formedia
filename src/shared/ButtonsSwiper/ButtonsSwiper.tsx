@@ -4,7 +4,6 @@ import css from "./ButtonsSwiper.module.scss"
 
 const SwiperButtonPrev = () => {
     const swiper = useSwiper()
-    console.log(swiper.pagination)
     return (
         <button className={css.button} onClick={() => swiper.slidePrev()}>
             <svg

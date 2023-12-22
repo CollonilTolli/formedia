@@ -1,10 +1,22 @@
+import { SpecProject } from "@/types/types"
 import ProjectComponent from "@/widgets/ProjectComponent/ProjectComponent"
-import { specProject } from "@/MockData/MockData"
+// import { specProject } from "@/MockData/MockData"
+import axios from "axios"
 
-export default function Page() {
+async function getData() {
+    const res = await fetch("http://127.0.0.1/api/v1/specproject/getproject")
+    if (!res.ok) {
+        throw new Error("Failed to fetch data")
+    }
+
+    return res.json()
+}
+export default async function Page() {
+    const data = await getData()
+    console.log(data)
     return (
         <>
-            <ProjectComponent data={specProject} />
+            <ProjectComponent data={data} />
         </>
     )
 }
